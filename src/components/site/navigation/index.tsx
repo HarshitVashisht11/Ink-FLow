@@ -2,7 +2,6 @@ import React from 'react'
 import {User} from '@clerk/nextjs/server'
 import Link from 'next/link'
 import { UserButton } from '@clerk/nextjs'
-import { ModeToggle } from '@/components/global/mode-toggle'
 type Props = {
     user?: null | User
 }
@@ -23,7 +22,6 @@ const Navigation = (props: Props) => {
         <aside className='flex gap-2 items-center'>
             <Link href={'/verify'} className=' bg-emerald-300 text-white p-2 px-4 rounded-md hover:bg-emerald-300/80'>Login</Link>
             <UserButton />
-            <ModeToggle />
            
         </aside>
     </div>
