@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import {dark} from '@clerk/themes';
-import { ClerkProvider, auth } from "@clerk/nextjs";
-import { ThemeProvider } from "@/providers/theme-providers";
+import { Suspense } from "react";
+
+import { Toaster } from "@/components/ui/sonner";
+import { ConvexClientProvider } from "@/providers/convex-client-provider";
+import { ModalProvider } from "@/providers/modal-provider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,17 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider  attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange>
+        <Suspense>
+          <ConvexClientProvider>
+            <Toaster />
+            <ModalProvider />
             {children}
-        </ThemeProvider>
+          </ConvexClientProvider>
+        </Suspense>
       </body>
     </html>
-    </ClerkProvider>
   );
 }
