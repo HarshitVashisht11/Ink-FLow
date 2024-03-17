@@ -45,13 +45,7 @@ export const Info = ({
             <Hint label="Go to boards" side="bottom" sideOffset={10}>
             <Button asChild variant="board" className="px-2">
                <Link href="/">
-                <Image
-                    src="/logo.svg"
-                    alt="Ink Flow Logo"
-                    height={40}
-                    width={40}
-                />
-            <span className={cn("font-semibold text-xl ml-2 text-black", font.className)}>
+            <span className={cn("font-bold text-xl ml-2 text-emerald-500", font.className)}>
                 Ink Flow
             </span>
             </Link>

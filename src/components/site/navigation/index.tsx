@@ -1,7 +1,6 @@
 import React from 'react'
 import {User} from '@clerk/nextjs/server'
 import Link from 'next/link'
-import { UserButton } from '@clerk/nextjs'
 type Props = {
     user?: null | User
 }
@@ -20,8 +19,8 @@ const Navigation = (props: Props) => {
             </ul>
         </nav>
         <aside className='flex gap-2 items-center'>
-            <Link href={'/'} className=' bg-emerald-300 text-white p-2 px-4 rounded-md hover:bg-emerald-300/80'>Login</Link>
-            <Link href={'/'} className=' bg-white text-black p-2 px-4 rounded-md hover:bg-white/80'>Sign Up</Link>
+            <Link href={'/dashboard'} className=' bg-emerald-300 text-white p-2 px-4 rounded-md hover:bg-emerald-300/80'>Login</Link>
+            <Link href={'/dashboard'} className=' bg-white text-black p-2 px-4 rounded-md hover:bg-white/80'>Sign Up</Link>
         </aside>
     </div>
   )
